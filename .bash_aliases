@@ -18,8 +18,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# killing TMUX sessions
+# tmux aliases
 alias tmk='tmux kill-session'
+alias tml='tmux list-sessions'
+alias tma='tmux a'
 
 # ls alias cuz 'la' is fucked
 alias a='ls -a'
