@@ -4,6 +4,10 @@ return {
     "MunifTanjim/nui.nvim",
     "hrsh7th/nvim-cmp",
   },
+  event = "VeryLazy",
+  keys = {
+    { "<leader>nd", "<cmd>NoiceDismiss<cr>", desc = "Dismiss Noice Messages" },
+  },
   config = function()
     require("noice").setup({
       lsp = {
