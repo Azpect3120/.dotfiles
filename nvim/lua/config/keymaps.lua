@@ -29,4 +29,3 @@ vim.cmd("command! -nargs=0 WQ wq")
 
 -- Back to Previous Buffer
 vim.keymap.set('n', '<leader><leader>', "<C-^>")
-
