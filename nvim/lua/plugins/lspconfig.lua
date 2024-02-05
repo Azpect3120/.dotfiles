@@ -2,6 +2,9 @@ return {
   "neovim/nvim-lspconfig",
   -- Config
   config = function()
+    -- Neovim Development Setup
+    require("neodev").setup({})
+
     -- Import Modules
     local lspconfig = require("lspconfig")
     local cmp = require("cmp")
@@ -68,7 +71,17 @@ return {
           filetypes = { 'c', 'cpp' },
           root_dir = require'lspconfig'.util.root_pattern("compile_commands.json", "CMakeLists.txt", "Makefile", ".git"),
         }
-      else
+      elseif lsp == "lua_ls" then
+          lspconfig.lua_ls.setup({
+            settings = {
+              Lua = {
+                completion = {
+                  callSnippet = "Replace"
+                }
+              }
+            }
+          })
+        else
         lspconfig[lsp].setup(config)
       end
     end
