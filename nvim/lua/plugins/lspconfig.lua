@@ -137,9 +137,6 @@ return {
           }
         })
       },
-      experimental = {
-        ghost_text = true,
-      },
     })
 
     -- Command Line & Search Bar Completions
