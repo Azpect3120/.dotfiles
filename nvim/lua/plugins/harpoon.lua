@@ -4,7 +4,9 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = function() require("harpoon"):setup() end,
+  config = function()
+    require("harpoon"):setup({})
+  end,
   keys = {
     { "<leader>a", function() require("harpoon"):list():append() end, desc = "Add File to Harpoon" },
     { "<C-e>", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon Quick Menu" },

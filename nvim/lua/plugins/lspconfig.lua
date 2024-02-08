@@ -121,9 +121,9 @@ return {
       },
       sources = {
         { name = "nvim_lsp" }, -- LSP as the source
+        { name = "tailwindcss" },
         { name = "buffer", max_item_counts = 5 },
         { name = "copilot" },
-        { name = "tailwindcss" },
         { name = "path", max_item_counts = 3 },
       },
       -- Setup symbols
@@ -157,7 +157,7 @@ return {
       }, {
         {
           name = "cmdline",
-          option = { ignore_cmds = { "Man", "!" } },
+          option = { ignore_cmds = { "!" } },
         },
       }),
     })
