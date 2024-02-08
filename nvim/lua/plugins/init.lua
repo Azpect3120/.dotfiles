@@ -33,17 +33,23 @@ return {
   },
   { "folke/neodev.nvim" },
   ------------------------------------------------------------------------------------
-  -- UTILITIES
-  ------------------------------------------------------------------------------------
-  { "tamton-aquib/keys.nvim" },
-
-  ------------------------------------------------------------------------------------
   -- MY OWN PLUGINS
   ------------------------------------------------------------------------------------
   {
     "azpect3120/keystrokes.nvim",
-    config = function ()
-      require("keystrokes").setup({})
-    end
+    cmd = "Keystrokes",
+    keys = {
+      { "<leader>ks", "<cmd>Keystrokes<cr>", desc = "Toggles Keystrokes" },
+    },
+    opts = {
+      max_display = 24,
+      window = {
+        width = 30,
+        height = 1,
+        title = "Blazingly Fast Fingers",
+        title_pos = "center",
+        border = "rounded",
+      },
+    },
   },
 }
