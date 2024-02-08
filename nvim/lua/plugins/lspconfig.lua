@@ -1,5 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = {
+    "onsails/lspkind.nvim",
+  },
   -- Config
   config = function()
     -- Neovim Development Setup
@@ -117,6 +120,18 @@ return {
         { name = 'nvim_lsp' }, -- LSP as the source
         { name = 'tailwindcss' },
       },
+      -- Setup symbols
+      formatting = {
+        format = require("lspkind").cmp_format({
+          mode = "symbol", 
+          maxwidth = 50,
+          ellipsis_char = '...',
+          show_labelDetails = true,
+          before = function (entry, vim_item)
+            return vim_item
+          end
+        })
+      }
     })
 
     -- Command Line & Search Bar Completions
