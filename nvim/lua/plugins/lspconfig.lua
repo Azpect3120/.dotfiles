@@ -89,7 +89,7 @@ return {
       end
     end
 
-    -- IDK what the fuck this is :)
+    -- Rename and Code Action Remaps
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
@@ -111,14 +111,20 @@ return {
         end,
       },
       mapping = {
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-u>"] = cmp.mapping.scroll_docs(4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<leader><CR>"] = cmp.mapping.complete(),
+        ["<C-c>"] = cmp.mapping.abort(),
+        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
       },
       sources = {
-        { name = 'nvim_lsp' }, -- LSP as the source
-        { name = 'tailwindcss' },
+        { name = "nvim_lsp" }, -- LSP as the source
+        { name = "buffer", max_item_counts = 5 },
+        { name = "copilot" },
+        { name = "tailwindcss" },
+        { name = "path", max_item_counts = 3 },
       },
       -- Setup symbols
       formatting = {
@@ -126,12 +132,14 @@ return {
           mode = "symbol", 
           maxwidth = 50,
           ellipsis_char = '...',
-          show_labelDetails = true,
-          before = function (entry, vim_item)
-            return vim_item
-          end
+          symbol_map = {
+            Copilot = "",
+          }
         })
-      }
+      },
+      experimental = {
+        ghost_text = true,
+      },
     })
 
     -- Command Line & Search Bar Completions

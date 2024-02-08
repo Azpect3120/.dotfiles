@@ -39,7 +39,7 @@ vim.opt.signcolumn = "yes"
 -- Scrolling & Cursor
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 vim.opt.updatetime = 50   -- system/cursor update timeout
 
