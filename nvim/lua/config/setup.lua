@@ -56,3 +56,6 @@ local function ToggleSpellCheck ()
     spellcheck = not spellcheck
 end
 vim.keymap.set('n', '<leader>sc', ToggleSpellCheck)
+
+-- Enable Keystrokes on VimEnter
+vim.cmd([[autocmd VimEnter * Keystrokes]])
