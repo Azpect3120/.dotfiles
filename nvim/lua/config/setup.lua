@@ -30,12 +30,24 @@ vim.opt.incsearch = true    -- incremental search
 -- Colors
 vim.opt.termguicolors = true
 
+-- Enable the sign column to prevent jumping
+vim.opt.signcolumn = "yes"
+
+-- Enable system clipboard
+--vim.opt.clipboard = "unamed,unnamedplus"
+
 -- Scrolling & Cursor
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.cursorcolumn = false
 vim.opt.updatetime = 50   -- system/cursor update timeout
+
+-- Fold settings for nvim-ufo `./plugins/ufo.lua`
+vim.o.foldcolumn = "0"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- Spell Check
 vim.opt.spell = true
