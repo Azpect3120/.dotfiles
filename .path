@@ -25,4 +25,5 @@ test -r /home/azpect/.opam/opam-init/init.sh && . /home/azpect/.opam/opam-init/i
 bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer'
 
 # Github-remote-connection
-bind -x '"\C-g":~/.dotfiles/scripts/github-remote-connection'
+# bind -x '"\C-g":~/.dotfiles/scripts/github-remote-connection'
+export PATH=$PATH:/home/azpect/.dotfiles/scripts

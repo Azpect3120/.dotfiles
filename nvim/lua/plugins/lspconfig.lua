@@ -124,7 +124,6 @@ return {
         { name = "tailwindcss" },
         { name = "buffer", max_item_counts = 5 },
         { name = "copilot" },
-        { name = "path", max_item_counts = 3 },
       },
       -- Setup symbols
       formatting = {
