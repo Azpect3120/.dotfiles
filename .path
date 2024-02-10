@@ -24,6 +24,8 @@ test -r /home/azpect/.opam/opam-init/init.sh && . /home/azpect/.opam/opam-init/i
 # Tmux sessioniser
 bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer'
 
+bind -x '"\C-a":tmux attach-session'
+
 # Github-remote-connection
 # bind -x '"\C-g":~/.dotfiles/scripts/github-remote-connection'
 export PATH=$PATH:/home/azpect/.dotfiles/scripts

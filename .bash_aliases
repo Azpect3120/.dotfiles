@@ -26,3 +26,6 @@ alias tma='tmux a'
 
 # ls alias cuz 'la' is fucked
 alias a='ls -a'
+
+# commands manual
+alias fman='compgen -c | fzf | xargs man'
