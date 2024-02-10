@@ -13,6 +13,7 @@ return {
         "typescript",
         "c",
         "lua",
+        "luadoc",
         "vim",
         "vimdoc",
         "query",
