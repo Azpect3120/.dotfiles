@@ -9,7 +9,6 @@
   "copilot.vim": { "branch": "release", "commit": "315c6d2b16e018cb8020f20aaa7081ebc4070828" },
   "fd": { "branch": "master", "commit": "969316cc0e87171273c6ea78ca73b6ee9ac3cb20" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },
-  "gomon.nvim": { "branch": "master", "commit": "c179ad5ff5241f1efa966650898b2ab4b658a8e0" },
   "harpoon": { "branch": "harpoon2", "commit": "a38be6e0dd4c6db66997deab71fc4453ace97f9c" },
   "kanagawa.nvim": { "branch": "master", "commit": "c19b9023842697ec92caf72cd3599f7dd7be4456" },
   "keystrokes.nvim": { "branch": "master", "commit": "1e16e8130c84e1e35e77565bd07817fa2e9b72ab" },
@@ -38,6 +37,6 @@
   "vim-dadbod": { "branch": "master", "commit": "9d3e3ce74a264642a41e8ae126be5afd095ef107" },
   "vim-dadbod-completion": { "branch": "master", "commit": "c920cb0ba3dff4b1b0ed373e1c0b3007dec696c2" },
   "vim-dadbod-ui": { "branch": "master", "commit": "165699c573469e6a95b48d35052f848c340c5911" },
-  "vim-fugitive": { "branch": "master", "commit": "41ef77c058bf44390a0dd02a6e130cb9b4621663" },
+  "vim-fugitive": { "branch": "master", "commit": "3d9cace1ff599d1315028802c086d7e39810a432" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
