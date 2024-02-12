@@ -110,10 +110,11 @@ return {
           require('luasnip').lsp_expand(args.body)
         end,
       },
+
       mapping = {
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<leader><CR>"] = cmp.mapping.complete(),
+        ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-c>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
