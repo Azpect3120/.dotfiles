@@ -31,4 +31,5 @@ vim.cmd("command! -nargs=0 WQ wq")
 vim.keymap.set("n", "<leader><leader>", "<C-^>")
 
 -- Convert ' to " in normal mode
+-- BEST KEYMAP EVER!!!!!!
 vim.keymap.set("n", "<leader>'", "V<cmd>s/'/\"/g<CR><C-c>")
