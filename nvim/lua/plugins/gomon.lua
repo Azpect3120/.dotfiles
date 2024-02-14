@@ -1,6 +1,6 @@
 return {
-  -- "azpect3120/gomon.nvim",
-  dir = "~/Documents/gomon.nvim",
+  "azpect3120/gomon.nvim",
+  -- dir = "~/Documents/gomon.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function ()
     require("gomon").setup({
