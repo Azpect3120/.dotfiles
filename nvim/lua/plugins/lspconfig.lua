@@ -57,6 +57,7 @@ return {
       "lua_ls",
       "sqlls",
       "ocamllsp",
+      "zls",
     }
 
     -- Provide LSP List Capabilities and Attach Functionality

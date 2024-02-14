@@ -15,6 +15,10 @@ export PATH=$PATH:/home/azpect/go/bin
 # Lua LSP
 export PATH=$PATH:/usr/local/bin/lua-lsp/bin
 
+# Zig and ZLS
+export PATH=$PATH:/usr/local/bin/zig
+export PATH=$PATH:/home/azpect/Public/zls/zig-out/bin
+
 # Source Cargo Modules
 . "$HOME/.cargo/env"
 
