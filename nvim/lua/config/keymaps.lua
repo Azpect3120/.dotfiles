@@ -22,10 +22,13 @@ vim.keymap.set('n', '<A-l>', '<C-W>l')
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('x', 'x', '"_x')
 
--- Disable case-sensitivity for 'q', 'w', and 'wq'
+-- Disable case-sensitivity for "q", "w", and "wq"
 vim.cmd("command! -nargs=0 W w")
 vim.cmd("command! -nargs=0 Q q")
 vim.cmd("command! -nargs=0 WQ wq")
 
 -- Back to Previous Buffer
-vim.keymap.set('n', '<leader><leader>', "<C-^>")
+vim.keymap.set("n", "<leader><leader>", "<C-^>")
+
+-- Convert ' to " in normal mode
+vim.keymap.set("n", "<leader>'", "V<cmd>s/'/\"/g<CR><C-c>")
