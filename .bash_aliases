@@ -20,7 +20,7 @@ fi
 
 # tmux aliases
 alias tmk='tmux kill-session'
-alias tmka='tmux kill-session'
+alias tmka='tmux kill-server'
 alias tml='tmux list-sessions'
 alias tma='tmux a'
 
