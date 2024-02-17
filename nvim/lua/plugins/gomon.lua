@@ -5,11 +5,13 @@ return {
   config = function ()
     require("gomon").setup({
       window = {
-        style = "split_right",
+        style = "float",
         wrap = false,
       },
       display_on_start = true,
-      close_on_stop = false,
+      close_on_stop = true,
     })
+
+    vim.keymap.set("n", "<leader>gt", "<cmd>Gomon toggle_display<cr>")
   end
 }
