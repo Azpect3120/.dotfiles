@@ -2,7 +2,7 @@
 export PATH=$PATH:/usr/local/bin/node/bin
 
 # Java 
-export PATH=$PATH:/usr/local/bin/jdk-20.0.2/bin
+# export PATH=$PATH:/usr/local/bin/jdk-20.0.2/bin
 
 # Go
 export PATH=$PATH:/usr/local/bin/go/bin
