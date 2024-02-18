@@ -1,26 +1,22 @@
 # Node
-export PATH=$PATH:/usr/local/bin/node-v20.8.0-linux-x64/bin
+export PATH=$PATH:/usr/local/bin/node/bin
 
 # Java 
 export PATH=$PATH:/usr/local/bin/jdk-20.0.2/bin
 
-# QT c++
-export PATH=$PATH:/home/azpect/Qt/6.6.1/gcc_64/bin
-
 # Go
 export PATH=$PATH:/usr/local/bin/go/bin
-export PATH=$PATH:/usr/local/bin/go/bin/go
 export PATH=$PATH:/home/azpect/go/bin
 
 # Lua LSP
-export PATH=$PATH:/usr/local/bin/lua-lsp/bin
+# export PATH=$PATH:/usr/local/bin/lua-lsp/bin
 
 # Zig and ZLS
-export PATH=$PATH:/usr/local/bin/zig
-export PATH=$PATH:/home/azpect/Public/zls/zig-out/bin
+# export PATH=$PATH:/usr/local/bin/zig
+# export PATH=$PATH:/home/azpect/Public/zls/zig-out/bin
 
 # Opam config
-test -r /home/azpect/.opam/opam-init/init.sh && . /home/azpect/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# test -r /home/azpect/.opam/opam-init/init.sh && . /home/azpect/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 # Tmux sessioniser
 bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer'
@@ -29,3 +25,6 @@ bind -x '"\C-a":tmux attach-session'
 
 # Github-remote-connection
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
+
+# Source rust projects
+source "$HOME/.cargo/env"
