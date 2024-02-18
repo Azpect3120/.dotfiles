@@ -19,9 +19,6 @@ export PATH=$PATH:/usr/local/bin/lua-lsp/bin
 export PATH=$PATH:/usr/local/bin/zig
 export PATH=$PATH:/home/azpect/Public/zls/zig-out/bin
 
-# Source Cargo Modules
-. "$HOME/.cargo/env"
-
 # Opam config
 test -r /home/azpect/.opam/opam-init/init.sh && . /home/azpect/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
