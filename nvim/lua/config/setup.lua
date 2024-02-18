@@ -7,7 +7,7 @@ function ToggleLineNumbers ()
   if vim.wo.number then
     vim.wo.number = false
     vim.wo.relativenumber = false
-  else 
+  else
     vim.wo.number = true
     vim.wo.relativenumber = true
   end
@@ -29,6 +29,7 @@ vim.opt.incsearch = true    -- incremental search
 
 -- Colors
 vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- Enable the sign column to prevent jumping
 vim.opt.signcolumn = "yes"
