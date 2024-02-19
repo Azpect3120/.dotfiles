@@ -1,2 +1,6 @@
+import = [
+ "/home/azpect/.config/alacritty/themes/themes/kanagawa_wave.toml",
+]
+
 [env]
-  TERM = "xterm-256color"
+term = "xterm-256color"
