@@ -14,7 +14,8 @@ return {
 
     -- Define Attach Functionality
     local on_attach = function(client, bufnr)
-      vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+      vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { buffer = bufnr })
+      vim.keymap.set("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", { buffer = bufnr })
     end
 
     -- Define LSP Capabilities
@@ -76,15 +77,17 @@ return {
           root_dir = require'lspconfig'.util.root_pattern("compile_commands.json", "CMakeLists.txt", "Makefile", ".git"),
         }
       elseif lsp == "lua_ls" then
-          lspconfig.lua_ls.setup({
-            settings = {
-              Lua = {
-                completion = {
-                  callSnippet = "Replace"
-                }
+        lspconfig.lua_ls.setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          settings = {
+            Lua = {
+              completion = {
+                callSnippet = "Replace"
               }
             }
-          })
+          }
+        })
         else
         lspconfig[lsp].setup(config)
       end
