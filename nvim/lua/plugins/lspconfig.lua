@@ -16,6 +16,7 @@ return {
     local on_attach = function(client, bufnr)
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { buffer = bufnr })
       vim.keymap.set("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", { buffer = bufnr })
+      vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", { buffer = bufnr })
     end
 
     -- Define LSP Capabilities
@@ -74,7 +75,7 @@ return {
           on_attach = on_attach,
           capabilities = capabilities,
           filetypes = { 'c', 'cpp' },
-          root_dir = require'lspconfig'.util.root_pattern("compile_commands.json", "CMakeLists.txt", "Makefile", ".git"),
+          root_dir = require 'lspconfig'.util.root_pattern("compile_commands.json", "CMakeLists.txt", "Makefile", ".git"),
         }
       elseif lsp == "lua_ls" then
         lspconfig.lua_ls.setup({
@@ -88,7 +89,7 @@ return {
             }
           }
         })
-        else
+      else
         lspconfig[lsp].setup(config)
       end
     end
@@ -127,13 +128,13 @@ return {
       sources = {
         { name = "nvim_lsp" }, -- LSP as the source
         { name = "tailwindcss" },
-        { name = "buffer", max_item_counts = 5 },
+        { name = "buffer",     max_item_counts = 5 },
         { name = "copilot" },
       },
       -- Setup symbols
       formatting = {
         format = require("lspkind").cmp_format({
-          mode = "symbol", 
+          mode = "symbol",
           maxwidth = 50,
           ellipsis_char = '...',
           symbol_map = {

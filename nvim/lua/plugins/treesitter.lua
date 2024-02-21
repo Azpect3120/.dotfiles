@@ -20,6 +20,7 @@ return {
         "ocaml",
         "bash",
         "zig",
+        "json",
       },
       sync_install = false,
       highlight = { enable = true },
