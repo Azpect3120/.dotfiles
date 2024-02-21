@@ -2,11 +2,11 @@ return {
   'stevearc/oil.nvim',
   opts = {
     -- Set to false if you still want to use netrw
-    default_file_explorer = false,
+    default_file_explorer = true,
     -- Id is automatically added at the beginning, and name at the end
     -- See :help oil-columns
     columns = {
-      "type",
+      -- "type",
       "icon",
       -- "permissions",
       -- "size",
@@ -32,6 +32,7 @@ return {
       end,
     },
   },
+  lazy = false,
   keys = {
     { "<leader>-", function () require("oil").toggle_float() end, desc = "Open Parent Directory In Buffer" }
   },

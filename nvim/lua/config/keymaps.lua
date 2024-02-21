@@ -1,5 +1,6 @@
 -- File Tree & Buffer Tree
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<cmd>Oil<cr>")
 
 -- Move Highlighted Block     <3 Primeagen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
