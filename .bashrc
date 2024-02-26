@@ -88,4 +88,4 @@ fi
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
 
 # Source rust projects
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"

@@ -2,7 +2,7 @@
 sudo pacman -Syu --noconfirm
 
 # Install dependencies used for the setup
-sudo pamcan -S --noconfirm curl
+sudo pacman -S --noconfirm curl
 
 # Setup git
 sudo pacman -S --noconfirm git
@@ -21,16 +21,16 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
-sudo pacman -S --noconfirm go nodejs npm rust gcc zig
+sudo pacman -S --noconfirm go nodejs rust gcc zig
 
 # Install NeoVim dependencies
 sudo pacman -S --noconfirm neovim xclip ripgrep fzf tidy fd jq
 
 # Install & configure NeoVim
-ln -s $HOME/.dotfiles/config/nvim $HOME/.config/nvim
+ln -s '$HOME/.dotfiles/config/nvim' '$HOME/.config/nvim'
 
 # Install LSPs
-sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-server typescript typescript-language-server
+sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-server typescript typescript-language-server @tailwindcss/language-server
 cargo install htmx-lsp 
 go install golang.org/x/tools/gopls@latest
 sudo pacman -S --noconfirm rust-analyzer lua-language-server
