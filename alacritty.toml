@@ -4,3 +4,6 @@ import = [
 
 [env]
 term = "xterm-256color"
+
+[font]
+size = 10.0
