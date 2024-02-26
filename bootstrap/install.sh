@@ -21,7 +21,8 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
-sudo pacman -S --noconfirm go nodejs rust gcc zig
+sudo pacman -S --noconfirm go nodejs rust gcc
+# Pacman has old zig version, so we install from source
 
 # Install NeoVim dependencies
 sudo pacman -S --noconfirm neovim xclip ripgrep fzf tidy fd jq
@@ -34,7 +35,7 @@ sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-ser
 cargo install htmx-lsp 
 go install golang.org/x/tools/gopls@latest
 sudo pacman -S --noconfirm rust-analyzer lua-language-server
-git clone https://github.com/zigtools/zls $HOME/zls && cd zls && zig build -Doptimize=ReleaseSafe
+# git clone https://github.com/zigtools/zls $HOME/zls && cd zls && zig build -Doptimize=ReleaseSafe
 
 # Install & configure Tmux
 sudo pacman -S --noconfirm tmux

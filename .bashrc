@@ -87,5 +87,8 @@ fi
 # Add scripts to PATH
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
 
+# Add zig to PATH
+export PATH=$PATH:/usr/local/bin/zig:/usr/local/bin/zls/zig-out/bin
+
 # Source rust projects
 # source "$HOME/.cargo/env"
