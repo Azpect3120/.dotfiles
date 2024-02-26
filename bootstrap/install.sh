@@ -1,6 +1,4 @@
 # Update daddy Pacman
-sudo pacman -Syu --noconfirm
-
 # Install dependencies used for the setup
 sudo pacman -S --noconfirm curl
 
@@ -22,7 +20,12 @@ ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
 sudo pacman -S --noconfirm go nodejs npm rust gcc
-# Pacman has old zig version, so we install from source
+
+# Install zig
+curl https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.3002+9d7082972.tar.xz --output $HOME/Downloads/zig.tar.xz
+cd $HOME/Downloads && tar -xf zig.tar.xz
+sudo mv zig-linux-x86_64* /usr/local/bin/zig
+cd $HOME && rm -rf $HOME/Downloads/zig.tar.xz
 
 # Install NeoVim dependencies
 sudo pacman -S --noconfirm neovim xclip ripgrep fzf tidy fd jq
@@ -35,7 +38,8 @@ sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-ser
 cargo install htmx-lsp 
 go install golang.org/x/tools/gopls@latest
 sudo pacman -S --noconfirm rust-analyzer lua-language-server
-# git clone https://github.com/zigtools/zls $HOME/zls && cd zls && zig build -Doptimize=ReleaseSafe
+git clone https://github.com/zigtools/zls $HOME/zls && cd $HOME/zls && zig build -Doptimize=ReleaseSafe && cd $HOME && sudo mv $HOME/zls /usr/local/bin/zls
+cd $HOME
 
 # Install & configure Tmux
 sudo pacman -S --noconfirm tmux
