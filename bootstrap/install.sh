@@ -38,7 +38,7 @@ sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-ser
 cargo install htmx-lsp 
 go install golang.org/x/tools/gopls@latest
 sudo pacman -S --noconfirm rust-analyzer lua-language-server
-git clone https://github.com/zigtools/zls $HOME/zls && cd $HOME/zls && zig build -Doptimize=ReleaseSafe && cd $HOME && sudo mv $HOME/zls /usr/local/bin/zls
+git clone https://github.com/zigtools/zls $HOME/zls && cd $HOME/zls && zig build -Doptimize=ReleaseSafe && sudo mv $HOME/zls /usr/local/bin/zls
 cd $HOME
 
 # Install & configure Tmux
