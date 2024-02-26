@@ -83,3 +83,9 @@ fi
 if [ -f ~/.dotfiles/.secrets ]; then
   source ~/.dotfiles/.secrets
 fi
+
+# Add scripts to PATH
+export PATH=$PATH:/home/azpect/.dotfiles/scripts
+
+# Source rust projects
+source "$HOME/.cargo/env"

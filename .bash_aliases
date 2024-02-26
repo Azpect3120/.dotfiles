@@ -29,3 +29,7 @@ alias a='ls -a'
 
 # commands manual
 alias fman='compgen -c | fzf | xargs man'
+
+# Tmux sessionizer & other keymaps
+bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer'
+bind -x '"\C-a":tmux attach-session'
