@@ -50,3 +50,5 @@ sudo pacman -S --noconfirm neofetch btop nmap \
 sudo ufw enable
 sudo ufw default deny
 sudo ufw allow ssh
+
+# Setup latte-dock?
