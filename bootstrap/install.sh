@@ -21,7 +21,7 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
-sudo pacman -S --noconfirm go nodejs rust gcc
+sudo pacman -S --noconfirm go nodejs npm rust gcc
 # Pacman has old zig version, so we install from source
 
 # Install NeoVim dependencies
