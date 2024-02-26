@@ -38,6 +38,7 @@ git clone https://github.com/zigtools/zls $HOME/zls && cd zls && zig build -Dopt
 
 # Install & configure Tmux
 sudo pacman -S --noconfirm tmux
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 ln -s $HOME/.dotfiles/config/tmux/.tmux.conf $HOME/.tmux.conf
 
 # Other Pacman packages
