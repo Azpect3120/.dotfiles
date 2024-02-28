@@ -33,3 +33,6 @@ alias fman='compgen -c | fzf | xargs man'
 # Tmux sessionizer & other keymaps
 bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer'
 bind -x '"\C-a":tmux attach-session'
+
+# Open vim in a file
+bind -x '"\C-n":fd --type f --hidden --exclude .git --exclude /node_modules | fzf-tmux -p | xargs nvim'
