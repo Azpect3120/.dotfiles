@@ -64,7 +64,7 @@ return { -----------------------------------------------------------------------
   },
   {
     dir = "/home/azpect/Documents/relax.nvim",
-    lazy = false,
+    cmd = "Relax",
     opts = {
 
     },
