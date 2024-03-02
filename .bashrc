@@ -87,8 +87,16 @@ fi
 # Add scripts to PATH
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
 
+# Add Go to path
+export PATH=$PATH:/home/azpect/go/bin
+
 # Add zig to PATH
 export PATH=$PATH:/usr/local/bin/zig:/usr/local/bin/zls/zig-out/bin
 
 # Source rust projects
 export PATH=$PATH:/home/azpect/.cargo/bin
+
+# Start window manager
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi

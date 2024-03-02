@@ -19,13 +19,15 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
-sudo pacman -S --noconfirm go nodejs npm rust gcc
+sudo pacman -S --noconfirm nodejs npm rust gcc
 
 # Install zig
 curl https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.3002+9d7082972.tar.xz --output $HOME/Downloads/zig.tar.xz
 cd $HOME/Downloads && tar -xf zig.tar.xz
 sudo mv zig-linux-x86_64* /usr/local/bin/zig
 cd $HOME && rm -rf $HOME/Downloads/zig.tar.xz
+
+# WIP: Install golang
 
 # Install NeoVim dependencies
 sudo pacman -S --noconfirm neovim xclip ripgrep fzf tidy fd jq
@@ -36,7 +38,7 @@ ln -s $HOME/.dotfiles/config/nvim $HOME/.config/nvim
 # Install LSPs
 sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-server typescript typescript-language-server @tailwindcss/language-server
 cargo install htmx-lsp 
-go install golang.org/x/tools/gopls@latest
+# go install golang.org/x/tools/gopls@latest
 sudo pacman -S --noconfirm rust-analyzer lua-language-server
 git clone https://github.com/zigtools/zls $HOME/zls && cd $HOME/zls && zig build -Doptimize=ReleaseSafe && sudo mv $HOME/zls /usr/local/bin/zls
 cd $HOME
