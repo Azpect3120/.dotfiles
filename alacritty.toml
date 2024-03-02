@@ -1,5 +1,5 @@
 import = [
- "/home/azpect/.config/alacritty/themes/themes/kanagawa_wave.toml",
+  "/home/azpect/.config/alacritty/themes/themes/kanagawa_wave.toml",
 ]
 
 [env]
@@ -23,3 +23,6 @@ style= "italic"
 [font.bold_italic]
 family = "Hack Nerd Font Mono"
 style= "bold italic"
+
+[window]
+padding = { x = 4, y = 4 }
