@@ -87,11 +87,8 @@ fi
 # Add scripts to PATH
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
 
-# Add Go to path
-export PATH=$PATH:/home/azpect/go/bin
-
-# Add zig to PATH
-export PATH=$PATH:/usr/local/bin/zig:/usr/local/bin/zls/zig-out/bin
+# Add local bin to PATH
+# export PATH=$PATH:/home/azpect/.local/bin/zig
 
 # Source rust projects
 export PATH=$PATH:/home/azpect/.cargo/bin
