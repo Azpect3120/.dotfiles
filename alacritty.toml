@@ -1,5 +1,6 @@
+# https://github.com/alacritty/alacritty-theme
 import = [
-  "/home/azpect/.config/alacritty/themes/themes/kanagawa_wave.toml",
+  "/home/azpect/.config/alacritty/themes/themes/kanagawa_wave.toml"
 ]
 
 [env]
@@ -26,3 +27,7 @@ style= "bold italic"
 
 [window]
 padding = { x = 4, y = 4 }
+
+# [colors.primary]
+# background = "#1d0d31"
+#foreground = "#e0def4"
