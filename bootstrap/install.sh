@@ -40,9 +40,7 @@ ln -s $HOME/.dotfiles/config/nvim $HOME/.config/nvim
 sudo npm i -g bash-language-server vscode-langservers-extracted sql-language-server typescript typescript-language-server @tailwindcss/language-server
 cargo install htmx-lsp 
 go install golang.org/x/tools/gopls@latest
-sudo pacman -S --noconfirm rust-analyzer lua-language-server
-git clone https://github.com/zigtools/zls $HOME/zls && cd $HOME/zls && zig build -Doptimize=ReleaseSafe && sudo mv $HOME/zls /usr/local/bin/zls
-cd $HOME
+sudo pacman -S --noconfirm rust-analyzer lua-language-server zls
 
 # Install & configure Tmux
 sudo pacman -S --noconfirm tmux
