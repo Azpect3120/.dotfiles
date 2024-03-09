@@ -90,6 +90,9 @@ export PATH=$PATH:/home/azpect/.dotfiles/scripts
 # Add local bin to PATH
 # export PATH=$PATH:/home/azpect/.local/bin/zig
 
+# Add go bin to path
+export PATH=$PATH:$HOME/go/bin
+
 # Source rust projects
 export PATH=$PATH:/home/azpect/.cargo/bin
 

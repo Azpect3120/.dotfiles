@@ -50,7 +50,8 @@ ln -s $HOME/.dotfiles/config/tmux/.tmux.conf $HOME/.tmux.conf
 # Other Pacman packages
 sudo pacman -S --noconfirm neofetch btop nmap \
   net-tools less tree unzip zip awk grep cmake \
-  make dolphin dpkg man-db postgresql ufw openssh
+  make dolphin dpkg man-db postgresql ufw openssh \
+  bash-completion
 
 # Setup UFW
 sudo ufw enable
