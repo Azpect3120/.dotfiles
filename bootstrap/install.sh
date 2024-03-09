@@ -66,3 +66,9 @@ sudo ufw allow ssh
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip -O $HOME/Hack.zip
 sudo unzip $HOME/Hack.zip -d /usr/share/fonts
 rm $HOME/Hack.zip
+
+# Window manager setup
+ln -s $HOME/.dotfiles/config/awesome/theme.lua $HOME/.config/awesome/
+ln -s $HOME/.dotfiles/config/awesome/rc.lua $HOME/.config/awesome/
+sudo ln -s $HOME/.dotfiles/config/polybar/config.ini /etc/polybar/
+rm -rf $HOME/.config/rofi && ln -s $HOME/.dotfiles/config/rofi/ $HOME/.config/
