@@ -68,6 +68,8 @@ sudo unzip $HOME/Hack.zip -d /usr/share/fonts
 rm $HOME/Hack.zip
 
 # Window manager setup
+sudo pacman -S awesome xorg-xinit xorg-xbacklight 
+rm $HOME/.xinitrc && echo "exec awesome" > $HOME/.xinitrc
 ln -s $HOME/.dotfiles/config/awesome/theme.lua $HOME/.config/awesome/
 ln -s $HOME/.dotfiles/config/awesome/rc.lua $HOME/.config/awesome/
 sudo ln -s $HOME/.dotfiles/config/polybar/config.ini /etc/polybar/
