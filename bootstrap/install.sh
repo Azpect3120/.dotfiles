@@ -15,6 +15,10 @@ mkdir -p $HOME/.config/alacritty/themes && git clone https://github.com/alacritt
 ln -s $HOME/.dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
+# Link custom oh-my-bash theme 
+ln -s $HOME/.dotfiles/config/bash/sunset/ $HOME/.oh-my-bash/themes
+
+
 # HOME directory setup
 rm $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_profile
 ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
