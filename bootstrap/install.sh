@@ -13,11 +13,6 @@ ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 sudo pacman -S --noconfirm alacritty
 mkdir -p $HOME/.config/alacritty/themes && git clone https://github.com/alacritty/alacritty-theme $HOME/.config/alacritty/themes
 ln -s $HOME/.dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-
-# Link custom oh-my-bash theme 
-ln -s $HOME/.dotfiles/config/bash/sunset/ $HOME/.oh-my-bash/themes
-
 
 # HOME directory setup
 rm $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_profile
@@ -74,3 +69,10 @@ ln -s $HOME/.dotfiles/config/awesome/theme.lua $HOME/.config/awesome/
 ln -s $HOME/.dotfiles/config/awesome/rc.lua $HOME/.config/awesome/
 sudo ln -s $HOME/.dotfiles/config/polybar/config.ini /etc/polybar/
 rm -rf $HOME/.config/rofi && ln -s $HOME/.dotfiles/config/rofi/ $HOME/.config/
+
+# Oh-my-bash setup
+# DO THIS LAST: It quits the current shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+ln -s $HOME/.dotfiles/config/bash/sunset/ $HOME/.oh-my-bash/themes
+
+source $HOME/.bashrc
