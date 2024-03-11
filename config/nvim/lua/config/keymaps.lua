@@ -34,3 +34,6 @@ vim.keymap.set("n", "<leader><leader>", "<C-^>")
 -- Convert ' to " in normal mode
 -- BEST KEYMAP EVER!!!!!!
 vim.keymap.set("n", "<leader>'", "V<cmd>s/'/\"/g<CR><C-c>")
+
+-- Chmod this file
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
