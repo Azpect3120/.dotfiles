@@ -1,0 +1,67 @@
+Xcursor.theme: whiteglass
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+! Prompts
+xlogin*greeting:        Arch BTW
+xlogin*namePrompt:      Username:\040
+xlogin*passwdPrompt:    Password:\040
+xlogin*fail:            Incorrect login or password, please try again.
+
+! Fonts
+xlogin*greetFont:   -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+xlogin*font:        -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+xlogin*promptFont:  -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+xlogin*failFont:    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+xlogin*greetFace:   Hack Nerd Font Mono-22:bold
+xlogin*face:        Hack Nerd Font Mono-14:bold
+xlogin*promptFace: 	Hack Nerd Font Mono-16:bold:italic
+xlogin*failFace: 	  Hack Nerd Font Mono-16:bold
+
+! grey    #262626
+! blue    #0092bf
+! red     #c1272d
+! yellow  #ddcd33
+
+! Colors
+xlogin*borderWidth:       0
+xlogin*frameWidth:        0
+xlogin*innerFramesWidth:  0
+xlogin*shdColor:          #ddcd33
+xlogin*hiColor:           #ddcd33
+xlogin*background:        #262626
+xlogin*inpColor:          #7a7a7a
+xlogin*foreground:        #ffffff
+xlogin*greetColor:        #0092bf
+xlogin*failColor:         #c1272d
+*Foreground:              #c1272d
+*Background:              #262626
+
+! Login Box
+xlogin*geometry:      700x300+1000+400
+xlogin*useShape:      true
+xlogin*logoPadding:   0
+
+XConsole.text.geometry:	  480x130
+XConsole.verbose:	        true
+XConsole*iconic:	        true
+XConsole*font:		        fixed
+
+Chooser*geometry:		          700x500+300+200
+Chooser*allowShellResize:	    false
+Chooser*viewport.forceBars:	  true
+Chooser*label.font:		        *-new century schoolbook-bold-i-normal-*-240-*
+Chooser*label.label:		      XDMCP Host Menu from CLIENTHOST
+Chooser*list.font:		        -*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1
+Chooser*Command.font:		      *-new century schoolbook-bold-r-normal-*-180-*

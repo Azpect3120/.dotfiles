@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/qiv -z /usr/local/share/wallpapers/bry_arch.png
