@@ -3,7 +3,7 @@
 sudo pacman -S --noconfirm curl wget
 
 # Make home directories
-mkdir -p $HOME/Downloads $HOME/Documents $HOME/Pictures $HOME/Music $HOME/Videos $HOME/.local/bin
+mkdir -p $HOME/Downloads $HOME/Documents $HOME/Pictures $HOME/Music $HOME/Videos $HOME/.local/bin $HOME/AUR
 
 # Setup git
 sudo pacman -S --noconfirm git
@@ -63,12 +63,26 @@ sudo unzip $HOME/Hack.zip -d /usr/share/fonts
 rm $HOME/Hack.zip
 
 # Window manager setup
-sudo pacman -S xorg-server awesome xorg-xinit xorg-xbacklight 
+sudo pacman -S --noconfirm xorg-server awesome xorg-xinit xorg-xbacklight 
 rm $HOME/.xinitrc && echo "exec awesome" > $HOME/.xinitrc
 ln -s $HOME/.dotfiles/config/awesome/theme.lua $HOME/.config/awesome/
 ln -s $HOME/.dotfiles/config/awesome/rc.lua $HOME/.config/awesome/
 sudo ln -s $HOME/.dotfiles/config/polybar/config.ini /etc/polybar/
 rm -rf $HOME/.config/rofi && ln -s $HOME/.dotfiles/config/rofi/ $HOME/.config/
+
+# Display manager setup
+sudo pacman -S --noconfirm xorg-xdm
+sudo systemctl enable xdm.service
+sudo mv /etc/X11/xdm/Xresources /etc/X11/xdm/Xresources.bak
+sudo mv /etc/X11/xdm/Xsetup_0 /etc/X11/xdm/Xsetup_0.bak
+sudo ln $HOME/.dotfiles/config/xdm/Xresources /etc/X11/xdm/Xresources
+sudo ln $HOME/.dotfiles/config/xdm/Xsetup_0 /etc/X11/xdm/Xsetup_0
+
+# Install QIV from the AUR
+cd $HOME/AUR && git clone https://aur.archlinux.org/qiv.git && cd $HOME/AUR/qiv
+makepkg -si --noconfirm
+sudo pacman -U --noconfirm qiv-2*.zst
+cd $HOME && rm -rf $HOME/AUR/qiv
 
 # Oh-my-bash setup
 # DO THIS LAST: It quits the current shell
