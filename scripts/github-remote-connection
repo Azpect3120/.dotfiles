@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Prompt the user for repo name
 read -p "Enter the name of the repository you wish to add remote connection to: " repo_name
