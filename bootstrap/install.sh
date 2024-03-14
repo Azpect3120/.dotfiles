@@ -21,13 +21,7 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME/.bash_aliases
 ln -s $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 
 # Install compilers and build tools
-sudo pacman -S --noconfirm nodejs npm rust gcc go
-
-# Install zig
-wget https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.3002+9d7082972.tar.xz -O $HOME/zig.tar.xz
-tar -xf zig.tar.xz
-mv zig-linux-x86_64* $HOME/.local/bin/zig
-rm $HOME/zig.tar.xz
+sudo pacman -S --noconfirm nodejs npm rust gcc go zig
 
 # Install NeoVim dependencies
 sudo pacman -S --noconfirm neovim xclip ripgrep fzf tidy fd jq
@@ -50,7 +44,7 @@ ln -s $HOME/.dotfiles/config/tmux/.tmux.conf $HOME/.tmux.conf
 sudo pacman -S --noconfirm neofetch btop nmap \
   net-tools less tree unzip zip awk grep cmake \
   make dolphin dpkg man-db postgresql ufw openssh \
-  bash-completion
+  bash-completion nitrogen
 
 # Setup UFW
 sudo ufw enable
