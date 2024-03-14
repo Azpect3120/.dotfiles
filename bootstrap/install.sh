@@ -69,8 +69,9 @@ sudo pacman -S --noconfirm xorg-xdm
 sudo systemctl enable xdm.service
 sudo mv /etc/X11/xdm/Xresources /etc/X11/xdm/Xresources.bak
 sudo mv /etc/X11/xdm/Xsetup_0 /etc/X11/xdm/Xsetup_0.bak
-sudo ln $HOME/.dotfiles/config/xdm/Xresources /etc/X11/xdm/Xresources
-sudo ln $HOME/.dotfiles/config/xdm/Xsetup_0 /etc/X11/xdm/Xsetup_0
+sudo ln -s $HOME/.dotfiles/config/xdm/Xresources /etc/X11/xdm/Xresources
+sudo ln -s $HOME/.dotfiles/config/xdm/Xsetup_0 /etc/X11/xdm/Xsetup_0
+sudo ln -s $HOME/.dotfiles/config/xdm/wallpapers /usr/local/share
 
 # Install QIV from the AUR
 cd $HOME/AUR && git clone https://aur.archlinux.org/qiv.git && cd $HOME/AUR/qiv
