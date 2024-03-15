@@ -13,10 +13,11 @@ return {
     local cmp = require("cmp")
 
     -- Define Attach Functionality
-    local on_attach = function(client, bufnr)
-      vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { buffer = bufnr })
-      vim.keymap.set("n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<cr>", { buffer = bufnr })
-      vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", { buffer = bufnr })
+    local on_attach = function(_, bufnr)
+      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { buffer = bufnr })
+      vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr })
     end
 
     -- Define LSP Capabilities
@@ -165,6 +166,11 @@ return {
           option = { ignore_cmds = { "!" } },
         },
       }),
+    })
+
+    -- Enable virtual text for diagnostics
+    vim.diagnostic.config({
+      virtual_text = true
     })
   end
 }
