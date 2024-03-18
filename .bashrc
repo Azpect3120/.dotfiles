@@ -94,6 +94,6 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/home/azpect/.cargo/bin
 
 # Start window manager
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx
-fi
+# if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  # exec startx
+# fi
