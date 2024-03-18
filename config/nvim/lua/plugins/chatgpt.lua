@@ -8,9 +8,10 @@ return {
     "nvim-telescope/telescope.nvim"
   },
   config = function()
-    local home = vim.fn.expand("$HOME")
+    -- local home = vim.fn.expand("$HOME")
     require("chatgpt").setup({
-          api_key_cmd = "gpg --decrypt " .. home .. "/.gpt-secret.txt.gpg"
+          -- api_key_cmd = "gpg --decrypt " .. home .. "/.gpt-secret.txt.gpg"
+        api_key_cmd = "echo $OPENAI_API_KEY"
     })
 
     WELCOME_MESSAGE = [[

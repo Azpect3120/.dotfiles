@@ -77,9 +77,6 @@ fi
 if [ -f ~/.dotfiles/.oh-my-bash.conf ]; then
   source ~/.dotfiles/.oh-my-bash.conf
 fi
-if [ -f ~/.dotfiles/.path ]; then
-  source ~/.dotfiles/.path
-fi
 if [ -f ~/.dotfiles/.secrets ]; then
   source ~/.dotfiles/.secrets
 fi
