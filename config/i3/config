@@ -38,6 +38,9 @@ bindsym $mod+q exec $HOME/.dotfiles/config/i3/i3kill.sh
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
 
+# start audio configuration 
+bindsym $mod+a exec --no-startup-id pavucontrol
+
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
@@ -127,7 +130,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -208,7 +211,6 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
