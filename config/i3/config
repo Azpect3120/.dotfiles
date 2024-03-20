@@ -33,7 +33,9 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+f exec firefox
 
 # kill focused window
-bindsym $mod+q exec $HOME/.dotfiles/config/i3/i3kill.sh
+# IDK Which of these is better for firefox, need to do some research
+# bindsym $mod+q exec $HOME/.dotfiles/config/i3/i3kill.sh
+bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
@@ -43,6 +45,9 @@ bindsym $mod+a exec --no-startup-id pavucontrol
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
+
+# Setup monitors
+exec --no-startup-id $HOME/.dotfiles/config/i3/displays.sh
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -143,6 +148,21 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# Setup workspace on different monitors
+set $center_monitor DP-0
+set $left_monitor HDMI-0
+set $right_monitor DP-2
+
+workspace 1 output $center_monitor
+workspace 2 output $center_monitor
+workspace 3 output $center_monitor
+workspace 4 output $center_monitor
+workspace 5 output $right_monitor
+workspace 6 output $right_monitor
+workspace 7 output $right_monitor
+workspace 8 output $left_monitor
+workspace 9 output $left_monitor
+
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
@@ -155,6 +175,8 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
+
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -165,6 +187,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -175,6 +198,7 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -185,6 +209,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -274,7 +299,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+BackSpace exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -286,7 +311,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+exec --no-startup-id start_conky_grey
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
