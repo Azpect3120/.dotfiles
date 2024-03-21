@@ -31,6 +31,10 @@ return {
   "kevinhwang91/nvim-ufo",
   dependencies = {"kevinhwang91/promise-async"},
   lazy = false,
+  keys = {
+    { "zR", require("ufo").openAllFolds(), desc = "Open All UFO Folds"},
+    { "zA", require("ufo").closeAllFolds(), desc = "Open All UFO Folds"},
+  },
   config = function ()
     require('ufo').setup({
       fold_virt_text_handler = handler,
