@@ -29,18 +29,22 @@ end
 
 return {
   "kevinhwang91/nvim-ufo",
-  dependencies = {"kevinhwang91/promise-async"},
+  dependencies = {
+    "kevinhwang91/promise-async",
+  },
   lazy = false,
   keys = {
-    { "zR", require("ufo").openAllFolds(), desc = "Open All UFO Folds"},
-    { "zA", require("ufo").closeAllFolds(), desc = "Open All UFO Folds"},
+    { "zR", function () require("ufo").openAllFolds() end, desc = "Open All UFO Folds"},
+    { "zA", function () require("ufo").closeAllFolds() end, desc = "Open All UFO Folds"},
   },
   config = function ()
-    require('ufo').setup({
+    local ufo = require("ufo")
+    ufo.setup({
       fold_virt_text_handler = handler,
-      provider_selector = function(bufnr, filetype, buftype)
+      provider_selector = function(_, _, _)
         return {'treesitter', 'indent'}
       end
     })
+    -- vim.keymap.set("n", function )
   end
 }
