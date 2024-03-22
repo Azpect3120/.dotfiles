@@ -44,7 +44,7 @@ ln -s $HOME/.dotfiles/config/tmux/.tmux.conf $HOME/.tmux.conf
 sudo pacman -S --noconfirm neofetch btop nmap \
   net-tools less tree unzip zip awk grep cmake \
   make dolphin dpkg man-db postgresql ufw openssh \
-  bash-completion nitrogen
+  bash-completion nitrogen polybar rofi
 
 # Setup UFW
 sudo ufw enable
@@ -58,11 +58,16 @@ rm $HOME/Hack.zip
 
 # Window manager setup
 sudo pacman -S --noconfirm xorg-server awesome xorg-xinit xorg-xbacklight 
-rm $HOME/.xinitrc && echo "exec awesome" > $HOME/.xinitrc
+rm $HOME/.xinitrc $HOME/.xsession
+mkdir -p $HOME/.config/awesome
 ln -s $HOME/.dotfiles/config/awesome/theme.lua $HOME/.config/awesome/
 ln -s $HOME/.dotfiles/config/awesome/rc.lua $HOME/.config/awesome/
+sudo mv /etc/polybar/config.ini /etc/polybar/config.bak.ini
 sudo ln -s $HOME/.dotfiles/config/polybar/config.ini /etc/polybar/
 rm -rf $HOME/.config/rofi && ln -s $HOME/.dotfiles/config/rofi/ $HOME/.config/
+echo "exec awesome" > $HOME/.xinitrc
+echo "exec awesome" > $HOME/.xsession
+sudo chmod +x $HOME/.xsession $HOME/.xinitrc
 
 # Display manager setup
 sudo pacman -S --noconfirm xorg-xdm
@@ -82,6 +87,8 @@ cd $HOME && rm -rf $HOME/AUR/qiv
 # Oh-my-bash setup
 # DO THIS LAST: It quits the current shell
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-ln -s $HOME/.dotfiles/config/bash/sunset/ $HOME/.oh-my-bash/themes
+ln -s $HOME/.dotfiles/config/bash/sunset/ $HOME/.oh-my-bash/themes # This won't actually run it cancels
+
+# Also re symlink the bashrc, OH MY BASH overrides it
 
 source $HOME/.bashrc
