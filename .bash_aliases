@@ -19,10 +19,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # tmux aliases
-alias tmk='tmux kill-session'
-alias tmka='tmux kill-server'
-alias tml='tmux list-sessions'
-alias tma='tmux a'
+# alias tmk='tmux kill-session'
+# alias tmka='tmux kill-server'
+# alias tml='tmux list-sessions'
+# alias tma='tmux a'
 
 # ls alias cuz 'la' is fucked
 alias a='ls -a'
@@ -31,8 +31,11 @@ alias a='ls -a'
 alias fman='compgen -c | fzf | xargs man'
 
 # Tmux sessionizer & other keymaps
-bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer.sh'
-bind -x '"\C-a":tmux attach-session'
+# bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer.sh'
+# bind -x '"\C-a":tmux attach-session'
 
 # Open vim in a file
 bind -x '"\C-n":fd --type f --hidden --exclude .git --exclude /node_modules | fzf-tmux -p | xargs nvim'
+
+# Source the .bashrc file
+alias sb='source $HOME/.bashrc'

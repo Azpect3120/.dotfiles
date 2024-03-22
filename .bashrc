@@ -77,9 +77,6 @@ fi
 if [ -f ~/.dotfiles/.oh-my-bash.conf ]; then
   source ~/.dotfiles/.oh-my-bash.conf
 fi
-if [ -f ~/.dotfiles/.path ]; then
-  source ~/.dotfiles/.path
-fi
 if [ -f ~/.dotfiles/.secrets ]; then
   source ~/.dotfiles/.secrets
 fi
@@ -97,6 +94,9 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/home/azpect/.cargo/bin
 
 # Start window manager
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx
-fi
+# if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  # exec startx
+# fi
+
+# Xrandr command for monitors in I3
+# xrandr --output DP-0 --auto --output DP-2 --auto --right-of DP-0 --output HDMI-0 --auto --rate 75 --rotate right --left-of DP-0
