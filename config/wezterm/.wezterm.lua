@@ -69,7 +69,7 @@ config.keys = {
   -- Splits
   { key = "v", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { key = "'", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { key = "q", mods = "CTRL", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+  { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
   -- Moving Around Splits
   { key = "h", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Left") },
   { key = "j", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Down") },
