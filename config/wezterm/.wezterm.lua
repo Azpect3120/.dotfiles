@@ -1,5 +1,5 @@
--- Pull in the wezterm API
-local wezterm = require 'wezterm'
+-- Pull in the wezterm API local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -18,7 +18,7 @@ config.window_frame = {
   -- Whatever font is selected here, it will have the
   -- main font setting appended to it to pick up any
   -- fallback fonts you may have used there.
-  font = wezterm.font { family = "Roboto", weight = "Bold" },
+  font = wezterm.font { family = "RobotoN", weight = "Bold" },
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
@@ -62,7 +62,37 @@ config.colors = {
 }
 
 -- Configure keymaps
--- config.keys = {}
+config.keys = {
+  -- Tabs
+  { key = "t", mods = "SUPER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+  { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+  -- Splits
+  { key = "v", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "'", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
+  -- Moving Around Splits
+  { key = "h", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Left") },
+  { key = "j", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Down") },
+  { key = "k", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Up") },
+  { key = "l", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Right") },
+  -- Resizing Splits
+  { key = "h", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+  { key = "j", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+  { key = "k", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+  { key = "l", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
+}
+
+-- SSH Domains: Doesn't seem to work
+--[[ config.ssh_domains = {
+  {
+    name = "gophernest",
+    remote_address = "38.188.134.128",
+    username = "azpect",
+  },
+} ]]
+
+-- Fixes weird error
+config.warn_about_missing_glyphs = false
 
 -- and finally, return the configuration to wezterm
 return config
