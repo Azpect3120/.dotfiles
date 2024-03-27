@@ -27,10 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-<<<<<<< HEAD
-=======
 # bindsym $mod+Return exec alacritty
->>>>>>> 49181b0677b692de6273fc487ef2992ce4df6135
 bindsym $mod+Return exec wezterm
 
 # start firefox
