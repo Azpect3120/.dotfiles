@@ -46,7 +46,7 @@ config.window_padding = {
 
 -- Configure fonts
 config.font = wezterm.font("JetBrains Mono", { italic = false, weight = "Regular" })
-config.font_size = 14.0
+config.font_size = 12.0
 
 -- Define the starting directory
 config.default_cwd = "$HOME"
@@ -67,8 +67,8 @@ config.keys = {
   { key = "t", mods = "SUPER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
   { key = "w", mods = "SUPER", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
   -- Splits
-  { key = "v", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { key = "'", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "%", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "\"", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
   { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
   -- Moving Around Splits
   { key = "h", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Left") },
