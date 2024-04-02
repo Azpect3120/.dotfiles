@@ -265,7 +265,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 6
 gaps outer -2
 
 # Smart gaps (gaps used if only more than one container on the workspace)
