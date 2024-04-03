@@ -61,6 +61,7 @@ return {
       "sqlls",
       "ocamllsp",
       "zls",
+      "asm_lsp",
     }
 
     -- Provide LSP List Capabilities and Attach Functionality
@@ -92,6 +93,15 @@ return {
               }
             }
           }
+        })
+      elseif lsp == "asm_lsp" then
+        lspconfig.asm_lsp.setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          filetypes = { "asm", "S", "s" },
+          root_dir = function (_)
+            return vim.loop.cwd()
+          end
         })
       else
         lspconfig[lsp].setup(config)
