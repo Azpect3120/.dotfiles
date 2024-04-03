@@ -10,6 +10,8 @@
   "fd": { "branch": "master", "commit": "68fe31da3f5da5d8d5b997d8919dc97e6eafead5" },
   "gitsigns.nvim": { "branch": "main", "commit": "078041e9d060a386b0c9d3a8c7a7b019a35d3fb0" },
   "gomon.nvim": { "branch": "master", "commit": "12d4557cae0b0827252a00e4357c756a7a643f56" },
+  "gotests": { "branch": "develop", "commit": "16a93f6eb6519118b1d282e2f233596a98dd7e96" },
+  "gotests.nvim": { "branch": "main", "commit": "2ddd2a3d43a7ab92cc14f6a2f84291d991a30c2d" },
   "harpoon": { "branch": "harpoon2", "commit": "a38be6e0dd4c6db66997deab71fc4453ace97f9c" },
   "kanagawa.nvim": { "branch": "master", "commit": "bfa818c7bf6259152f1d89cf9fbfba3554c93695" },
   "keystrokes.nvim": { "branch": "master", "commit": "1e16e8130c84e1e35e77565bd07817fa2e9b72ab" },

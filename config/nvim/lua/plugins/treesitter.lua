@@ -19,8 +19,11 @@ return {
         "query",
         "ocaml",
         "bash",
+        "tsx",
         "zig",
         "json",
+        "yaml",
+        "ejs",
       },
       sync_install = false,
       highlight = { enable = true },
@@ -47,6 +50,16 @@ return {
       },
       branch = "main",
     }
+    parsers.ejs = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+        files = {
+          "src/parser.c",
+        },
+        requires_generate_from_grammar = true,
+      },
+    }
     vim.cmd('autocmd BufNewFile,BufRead .* setfiletype bash')
+    vim.cmd('autocmd BufNewFile,BufRead *.ejs setfiletype html')
   end
 }
