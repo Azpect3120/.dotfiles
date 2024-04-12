@@ -61,12 +61,5 @@ return { -----------------------------------------------------------------------
         border = "rounded",
       },
     },
-  },
-  {
-    dir = "/home/azpect/Documents/relax.nvim",
-    cmd = "Relax",
-    opts = {
-
-    },
   }
 }
