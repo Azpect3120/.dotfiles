@@ -70,8 +70,5 @@ local function ToggleSpellCheck ()
 end
 vim.keymap.set('n', '<leader>sc', ToggleSpellCheck)
 
--- Enable Keystrokes on VimEnter
--- vim.cmd([[autocmd VimEnter * Keystrokes]])
-
 -- Enable GoFmt on saving go files
 vim.cmd([[autocmd BufWritePre *.go execute 'lua vim.lsp.buf.format()']])
