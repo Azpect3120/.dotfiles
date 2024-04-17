@@ -27,8 +27,10 @@ connections=`git remote`
 # If it doesn't, create the connection
 if [[ $connections == *$connection_name* ]]; then
   echo "Connection '$connection_name' already exists. Setting new URL..."
+  git init
   git remote set-url $connection_name $repo_url
 else
   echo "Connection '$connection_name' does not exist. Creating new connection..."
+  git init
   git remote add $connection_name $repo_url
 fi
