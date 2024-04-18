@@ -33,7 +33,7 @@
   "oil.nvim": { "branch": "master", "commit": "e462a3446505185adf063566f5007771b69027a1" },
   "plenary.nvim": { "branch": "master", "commit": "8aad4396840be7fc42896e3011751b7609ca4119" },
   "promise-async": { "branch": "main", "commit": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355" },
-  "rose-pine": { "branch": "main", "commit": "7777aa953c1561fb93d595b33bf019b2ef4af9de" },
+  "rose-pine": { "branch": "main", "commit": "9cd7d8aad3606a95d733a45d16275eb7a5a836a3" },
   "smart-splits.nvim": { "branch": "master", "commit": "e11caebbe3ce8fb70aced281931f73519a060e0a" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "treesj": { "branch": "main", "commit": "60e27280030f9cd8dfb6ceb335922c6ff76682cc" },
