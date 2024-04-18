@@ -31,7 +31,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id pavucontrol
 # bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+h focus left
