@@ -1,6 +1,6 @@
 # vim to neovim
-alias vi='nvim'
-alias vim='nvim'
+alias vi="nvim"
+alias vim="nvim"
 
 # add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -9,33 +9,23 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    # alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# tmux aliases
-# alias tmk='tmux kill-session'
-# alias tmka='tmux kill-server'
-# alias tml='tmux list-sessions'
-# alias tma='tmux a'
-
-# ls alias cuz 'la' is fucked
-alias a='ls -a'
-
 # commands manual
 alias fman='compgen -c | fzf | xargs man'
-
-# Tmux sessionizer & other keymaps
-# bind -x '"\C-t":~/.dotfiles/scripts/tmux-sessionizer.sh'
-# bind -x '"\C-a":tmux attach-session'
 
 # Open vim in a file
 bind -x '"\C-n":fd --type f --hidden --exclude .git --exclude /node_modules | fzf-tmux -p | xargs nvim'
 
 # Source the .bashrc file
-alias sb='source $HOME/.bashrc'
+alias sb="source $HOME/.bashrc"
+
+# Replace LS with eza
+alias ls="eza --icons=always --group-directories-first -X"
+alias la="eza --icons=always --group-directories-first -aX"
+alias ll="eza --icons=always --group-directories-first -lX --git"
+alias lla="eza --icons=always --group-directories-first -laX --git"
