@@ -76,8 +76,18 @@ return {
         lspconfig.clangd.setup {
           on_attach = on_attach,
           capabilities = capabilities,
-          filetypes = { 'c', 'cpp' },
-          root_dir = require 'lspconfig'.util.root_pattern("compile_commands.json", "CMakeLists.txt", "Makefile", ".git"),
+          cmd = { "clangd", "--offset-encoding=utf-16" },
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+          root_dir = require 'lspconfig'.util.root_pattern(
+            ".clangd",
+            ".clang-tidy",
+            ".clang-format",
+            "compile_commands.json",
+            "compile_flags.txt",
+            "configure.ac",
+            ".git"
+          ),
+          single_file_support = true
         }
       elseif lsp == "lua_ls" then
         lspconfig.lua_ls.setup({
