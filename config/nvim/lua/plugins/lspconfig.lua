@@ -18,6 +18,8 @@ return {
       vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, { buffer = bufnr })
       vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { buffer = bufnr })
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr })
+      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { buffer = bufnr })
+      vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { buffer = bufnr })
     end
 
     -- Define LSP Capabilities
@@ -109,7 +111,7 @@ return {
           capabilities = capabilities,
           on_attach = on_attach,
           filetypes = { "asm", "S", "s" },
-          root_dir = function (_)
+          root_dir = function(_)
             return vim.loop.cwd()
           end
         })
@@ -117,20 +119,6 @@ return {
         lspconfig[lsp].setup(config)
       end
     end
-
-    -- Rename and Code Action Remaps
-    vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-      callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-        local opts = { buffer = ev.buf }
-        -- Rename remap
-        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-      end,
-    })
 
     -- Completion Setup
     cmp.setup({

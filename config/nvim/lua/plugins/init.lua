@@ -61,5 +61,9 @@ return { -----------------------------------------------------------------------
         border = "rounded",
       },
     },
+  },
+  {
+    dir = "/home/azpect/Documents/Projects/DocumentSyncProtocol/neovim",
+    lazy = false,
   }
 }
