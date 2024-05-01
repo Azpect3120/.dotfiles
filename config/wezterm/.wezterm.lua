@@ -82,15 +82,6 @@ config.keys = {
   { key = "l", mods = "CTRL|SHIFT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
 }
 
--- SSH Domains: Doesn't seem to work
---[[ config.ssh_domains = {
-  {
-    name = "gophernest",
-    remote_address = "38.188.134.128",
-    username = "azpect",
-  },
-} ]]
-
 -- Fixes weird error
 config.warn_about_missing_glyphs = false
 

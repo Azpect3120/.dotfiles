@@ -15,9 +15,7 @@ return {
     -- Define Attach Functionality
     local on_attach = function(_, bufnr)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr })
-      vim.keymap.set("n", "<leader>d", function() vim.lsp.buf.definition() end, { buffer = bufnr })
       vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { buffer = bufnr })
-      vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr })
       vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { buffer = bufnr })
       vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { buffer = bufnr })
     end
@@ -128,11 +126,11 @@ return {
         end,
       },
 
+
       mapping = {
-        ["<C-u>"] = cmp.mapping.scroll_docs(4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-c>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),

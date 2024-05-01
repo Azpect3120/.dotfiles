@@ -8,13 +8,10 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>",           desc = "File Fuzzy Finder" },
-    { "<leader>g",  "<cmd>Telescope live_grep<cr>",            desc = "Live Grep" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffer Fuzzy Finder" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>",              desc = "Buffer Fuzzy Finder" },
-    { "<leader>d",  "<cmd>Telescope lsp_definitions<cr>",      desc = "View LSP Definitions" },
-    { "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", desc = "View Document Symbols" },
-    { "<leader>lr", "<cmd>Telescope lsp_references<cr>",       desc = "View LSP References" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",      desc = "File Fuzzy Finder" },
+    { "<leader>gg", "<cmd>Telescope live_grep<cr>",       desc = "Live Grep" },
+    { "gd",         "<cmd>Telescope lsp_definitions<cr>", desc = "View LSP Definitions" },
+    { "gr",         "<cmd>Telescope lsp_references<cr>",   desc = "View LSP References" },
   },
   opts = {
     defaults = {
@@ -24,7 +21,7 @@ return {
     },
     pickers = {
       find_files = {
-        hidden = true
+        hidden = true,
       },
     },
     extensions = {}
