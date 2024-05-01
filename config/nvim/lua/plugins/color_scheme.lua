@@ -7,7 +7,7 @@ return {
         compile = false,             -- enable compiling the colorscheme
         undercurl = true,            -- enable undercurls
         commentStyle = { italic = true },
-        functionStyle = {},
+        functionStyle = { bold = true },
         keywordStyle = { italic = true },
         statementStyle = { bold = true },
         typeStyle = {},
@@ -138,11 +138,6 @@ return {
           -- end
         end,
       })
-
-      -- vim.cmd("colorscheme rose-pine")
-      -- vim.cmd("colorscheme rose-pine-main")
-      -- vim.cmd("colorscheme rose-pine-moon")
-      -- vim.cmd("colorscheme rose-pine-dawn")
     end
   },
 }
