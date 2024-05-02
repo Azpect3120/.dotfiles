@@ -37,3 +37,9 @@ alias h="h"
 
 # Use bat instead of cat
 alias cat="bat"
+
+# Use rip instead of rm
+alias rm="rip"
+
+# Setup fuck
+eval "$(thefuck --alias)"
