@@ -52,7 +52,7 @@ return {
   },
   lazy = false,
   keys = {
-    { "<leader>-", function () require("oil").toggle_float() end, desc = "Open Parent Directory In Buffer" }
+    { "<leader>_", function () require("oil").toggle_float() end, desc = "Open Parent Directory In Buffer" }
   },
   dependencies = {
     "nvim-tree/nvim-web-devicons",

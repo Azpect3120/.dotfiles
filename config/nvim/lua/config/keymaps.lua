@@ -1,6 +1,5 @@
 -- File Tree & Buffer Tree
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>pv", "<cmd>Oil<cr>")
+vim.keymap.set("n", "<leader>-", "<cmd>Oil<cr>")
 
 -- Move Highlighted Block     <3 Primeagen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
@@ -12,6 +11,10 @@ vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set('n', '<leader>y', '\"+y')
 vim.keymap.set('v', '<leader>y', '\"+y')
 vim.keymap.set('x', '<leader>y', '\"+y')
+
+-- Paste From System Clipboard
+vim.keymap.set({"n", "v"}, "<leader>p", "\"+p")
+vim.keymap.set({"n", "v"}, "<leader>P", "\"+P")
 
 -- Disable cutting with 'x'
 vim.keymap.set('n', 'x', '"_x')
