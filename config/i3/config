@@ -27,6 +27,7 @@ exec --no-startup-id $HOME/.dotfiles/config/i3/displays.sh
 # Start Applications
 bindsym $mod+f exec firefox
 bindsym $mod+Return exec wezterm
+bindsym $mod+s exec flameshot gui
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id pavucontrol
 # bindsym $mod+F3 exec pcmanfm
