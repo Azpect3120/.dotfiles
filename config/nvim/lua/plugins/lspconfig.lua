@@ -69,6 +69,7 @@ return {
       local config = {
         on_attach = on_attach,
         capabilities = capabilities,
+        single_file_support = true,
       }
 
       -- Some goofy 'C' setup
@@ -102,7 +103,8 @@ return {
                 globals = { "vim" }
               }
             }
-          }
+          },
+          single_file_support = true
         })
       elseif lsp == "asm_lsp" then
         lspconfig.asm_lsp.setup({
@@ -149,7 +151,7 @@ return {
           ellipsis_char = '...',
           symbol_map = {
             Copilot = "",
-          }
+          },
         })
       },
     })

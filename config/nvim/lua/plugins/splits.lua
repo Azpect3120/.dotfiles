@@ -16,10 +16,10 @@ return {
     vim.keymap.set("n", "<A-l>", require("smart-splits").move_cursor_right)
 
     -- swapping buffers between windows
-    vim.keymap.set("n", "<leader>h", require("smart-splits").swap_buf_left)
-    vim.keymap.set("n", "<leader>j", require("smart-splits").swap_buf_down)
-    vim.keymap.set("n", "<leader>k", require("smart-splits").swap_buf_up)
-    vim.keymap.set("n", "<leader>l", require("smart-splits").swap_buf_right)
+    vim.keymap.set("n", "<C-A-h>", require("smart-splits").swap_buf_left)
+    vim.keymap.set("n", "<C-A-j>", require("smart-splits").swap_buf_down)
+    vim.keymap.set("n", "<C-A-q>", require("smart-splits").swap_buf_up)
+    vim.keymap.set("n", "<C-A-l>", require("smart-splits").swap_buf_right)
 
     -- creating and killing splits
     vim.keymap.set("n", "<A-'>", "<cmd>vsplit<cr><C-w>l")
