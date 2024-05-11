@@ -29,8 +29,8 @@ bindsym $mod+f exec firefox
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
 bindsym $mod+a exec --no-startup-id pavucontrol
-# bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
+
+# Disable focus follows mouse
 focus_follows_mouse no
 
 # Rofi menus
