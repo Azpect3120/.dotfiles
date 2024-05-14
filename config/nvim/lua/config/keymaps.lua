@@ -17,8 +17,7 @@ vim.keymap.set({"n", "v"}, "<leader>p", "\"+p")
 vim.keymap.set({"n", "v"}, "<leader>P", "\"+P")
 
 -- Disable cutting with 'x'
-vim.keymap.set('n', 'x', '"_x')
-vim.keymap.set('x', 'x', '"_x')
+vim.keymap.set({"n", "x"}, "x", "\"_x")
 
 -- Disable case-sensitivity for "q", "w", and "wq"
 vim.cmd("command! -nargs=0 W w")
@@ -34,3 +33,15 @@ vim.keymap.set("n", "<leader>'", "V<cmd>s/'/\"/g<CR><C-c>")
 
 -- Chmod this file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- Source this file
+vim.keymap.set("n", "<leader>xx", "<cmd>source %<CR>", { silent = true })
+
+-- Open a terminal at the bottom of the screen with a fixed height.
+vim.keymap.set("n", "<leader>st", function()
+  vim.cmd.new()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 12)
+  vim.wo.winfixheight = true
+  vim.cmd.term()
+end)

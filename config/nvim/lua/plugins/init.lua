@@ -63,7 +63,7 @@ return { -----------------------------------------------------------------------
     },
   },
   {
-    dir = "/home/azpect/Documents/Projects/DocumentSyncProtocol/new_arch/neovim",
+    dir = "/home/azpect/Documents/Projects/DocumentSyncProtocol/master/neovim",
     lazy = false,
   }
 }

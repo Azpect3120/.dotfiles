@@ -56,6 +56,9 @@ vim.opt.spelllang = 'en_us'
 vim.cmd([[highlight SpellBad cterm=underline gui=underline]])
 vim.cmd([[highlight SpellLocal cterm=none gui=none]])
 
+-- Some Teej magic
+vim.opt.inccommand = "split"
+
 -- Toggle spell check
 local spellcheck = true
 local function ToggleSpellCheck ()
@@ -72,3 +75,13 @@ vim.keymap.set('n', '<leader>sc', ToggleSpellCheck)
 
 -- Enable GoFmt on saving go files
 vim.cmd([[autocmd BufWritePre *.go execute 'lua vim.lsp.buf.format()']])
+
+-- Better terminal stuff
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("better_terminal", { clear = true }),
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.scrolloff = 0
+  end
+})
