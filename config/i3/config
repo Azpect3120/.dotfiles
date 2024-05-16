@@ -29,6 +29,7 @@ bindsym $mod+f exec firefox
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
 bindsym $mod+a exec --no-startup-id pavucontrol
+bindsym $mod+e exec --no-startup-id pcmanfm
 
 # Disable focus follows mouse
 focus_follows_mouse no
@@ -180,7 +181,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #ce1f30 #80FFF9 #FDF6E3
+  client.focused          #556064 #eb588f #80FFF9 #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
