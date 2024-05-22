@@ -159,6 +159,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       },
       sources = {
+        { name = "vim-dadbod-completion" },
         { name = "nvim_lsp" }, -- LSP as the source
         { name = "tailwindcss" },
         { name = "buffer",     max_item_counts = 5 },

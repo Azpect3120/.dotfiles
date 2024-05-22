@@ -66,23 +66,22 @@ bindsym $mod+space split toggle
 bindsym $mod+Shift+f fullscreen toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
 
 # Define monitor names
-set $center_monitor DP-0
-set $left_monitor HDMI-0
-set $right_monitor DP-2
+set $left_monitor DP-0
+set $right_monitor HDMI-0
 
 # Setup workspace on different monitors
-workspace 1 output $center_monitor
-workspace 2 output $center_monitor
-workspace 3 output $center_monitor
-workspace 4 output $center_monitor
+workspace 1 output $left_monitor
+workspace 2 output $left_monitor
+workspace 3 output $left_monitor
+workspace 4 output $left_monitor
 workspace 5 output $right_monitor
 workspace 6 output $right_monitor
 workspace 7 output $right_monitor
-workspace 8 output $left_monitor
-workspace 9 output $left_monitor
+workspace 8 output $right_monitor
+workspace 9 output $right_monitor
 
 # Workspace names
 set $ws1 1
@@ -176,12 +175,9 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
-
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #eb588f #80FFF9 #FDF6E3
+  client.focused          #556064 #04cfd0 #80FFF9 #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
