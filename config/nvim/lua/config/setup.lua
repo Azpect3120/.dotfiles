@@ -85,3 +85,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.scrolloff = 0
   end
 })
+
+-- Some ocaml & opem things
+vim.opt.rtp:prepend("/home/azpect/.opam/default/share/ocp-indent/vim")

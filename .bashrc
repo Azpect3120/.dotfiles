@@ -95,3 +95,6 @@ export PATH=$PATH:/home/azpect/.cargo/bin
 
 # Xrandr command for monitors in I3
 # xrandr --output DP-0 --auto --output DP-2 --auto --right-of DP-0 --output HDMI-0 --auto --rate 75 --rotate right --left-of DP-0
+
+# Ocaml & Opam setup
+eval $(opam env)

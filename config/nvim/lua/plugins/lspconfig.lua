@@ -62,6 +62,7 @@ return {
       "ocamllsp",
       "zls",
       "asm_lsp",
+      "dockerls",
     }
 
     -- Provide LSP List Capabilities and Attach Functionality
@@ -114,6 +115,26 @@ return {
           root_dir = function(_)
             return vim.loop.cwd()
           end
+        })
+      elseif lsp == "dockerls" then
+        lspconfig.dockerls.setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          filetypes = { "Dockerfile", "dockerfile" },
+          root_dir = require 'lspconfig'.util.root_pattern(
+            "Dockerfile",
+            ".git"
+          ),
+          settings = {
+            docker = {
+              languageserver = {
+                formatter = {
+                  ignoreMultilineInstructions = true,
+                },
+              },
+            },
+          },
+          single_file_support = true
         })
       else
         lspconfig[lsp].setup(config)
