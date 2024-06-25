@@ -85,3 +85,9 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.scrolloff = 0
   end
 })
+
+-- Opam & Ocaml setup
+vim.opt.rtp:prepend("/home/azpect/.opam/default/share/ocp-indent/vim")
+
+local opamshare = vim.fn.system('opam var share'):gsub('\n$', '')
+vim.opt.rtp:append(opamshare .. "/merlin/vim")

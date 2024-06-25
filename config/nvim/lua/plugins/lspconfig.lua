@@ -62,6 +62,8 @@ return {
       "ocamllsp",
       "zls",
       "asm_lsp",
+      "qmlls",
+      "dockerls",
     }
 
     -- Provide LSP List Capabilities and Attach Functionality
@@ -114,6 +116,12 @@ return {
           root_dir = function(_)
             return vim.loop.cwd()
           end
+        })
+      elseif lsp == "qmlls" then
+        lspconfig.qmlls.setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          cmd = { "qmlls6", "--build-dir", vim.loop.cwd(), "-l", vim.loop.cwd() .. "/qmlls.log" },
         })
       else
         lspconfig[lsp].setup(config)
