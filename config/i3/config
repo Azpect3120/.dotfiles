@@ -21,9 +21,6 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
-# Setup monitors
-exec_always --no-startup-id $HOME/.dotfiles/config/i3/displays.sh
-
 # Start Applications
 bindsym $mod+f exec vivaldi
 bindsym $mod+Return exec wezterm
