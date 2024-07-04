@@ -84,17 +84,11 @@ fi
 # Add scripts to PATH
 export PATH=$PATH:/home/azpect/.dotfiles/scripts
 
-# Add local bin to PATH
-# export PATH=$PATH:/home/azpect/.local/bin/zig
-
 # Add go bin to path
 export PATH=$PATH:$HOME/go/bin
 
 # Source rust projects
 export PATH=$PATH:/home/azpect/.cargo/bin
-
-# Xrandr command for monitors in I3
-# xrandr --output DP-0 --auto --output DP-2 --auto --right-of DP-0 --output HDMI-0 --auto --rate 75 --rotate right --left-of DP-0
 
 # Ocaml & Opam setup
 eval $(opam env)
