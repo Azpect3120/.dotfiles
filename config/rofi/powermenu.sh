@@ -11,7 +11,7 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-8'
+theme='style-5'   # Make sure to change 'west' to 'east' and change 'x-offset' to negative value for style-5
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
