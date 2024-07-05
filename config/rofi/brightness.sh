@@ -43,7 +43,7 @@ lastPick=0
 run_cmd() {
     case "$1" in
         "$option_1")
-            light -A 20
+            light -A 10
             lastPick=0
             ;;
         "$option_2")
@@ -51,7 +51,7 @@ run_cmd() {
             lastPick=1
             ;;
         "$option_3")
-            light -U 20
+            light -U 10
             lastPick=2
             ;;
         "$option_4")
