@@ -26,6 +26,7 @@ bindsym $mod+f exec vivaldi
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
 bindsym $mod+a exec --no-startup-id pavucontrol
+# bindsym $mod+a exec --no-startup-id /home/azpect/.dotfiles/config/rofi/volume.sh
 bindsym $mod+e exec --no-startup-id pcmanfm
 
 # Disable focus follows mouse
@@ -37,6 +38,7 @@ focus_follows_mouse no
 # powermenu: type-1 style 4
 bindsym $mod+d exec --no-startup-id /home/azpect/.dotfiles/config/rofi/launcher.sh
 bindsym $mod+0 exec --no-startup-id /home/azpect/.dotfiles/config/rofi/powermenu.sh
+bindsym $mod+b exec --no-startup-id /home/azpect/.dotfiles/config/rofi/brightness.sh
 
 # change focus
 bindsym $mod+h focus left
