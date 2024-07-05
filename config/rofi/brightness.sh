@@ -105,8 +105,6 @@ while true; do
 
     # Display menu and get user choice
     chosen=$(echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd $lastPick)
-    # chosen=$(echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd -selected-row $(echo -e "$option_1\n$option_2\n$option_3\n$option_4" | grep -n "$last_selection" | cut -d: -f1 | awk '{print $1 - 1}'))
-
     
     # Handle the case when `Esc` is pressed (which sets `chosen` to an empty string)
     if [[ -z "$chosen" ]]; then
