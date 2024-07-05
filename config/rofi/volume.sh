@@ -7,45 +7,49 @@
 
 # Import Current Theme
 type="$HOME/.config/rofi/applets/type-3"
-style='style-1.rasi'
+style='style-2.rasi'
 theme="$type/$style"
 
-# Volume Info
-mixer="`amixer info Master | grep 'Mixer name' | cut -d':' -f2 | tr -d \',' '`"
-speaker="`amixer get Master | tail -n1 | awk -F ' ' '{print $5}' | tr -d '[]'`"
-mic="`amixer get Capture | tail -n1 | awk -F ' ' '{print $5}' | tr -d '[]'`"
+
+# Speaker and mic information
+SPEAKER_SINK_NAME=$(pactl info | awk '/^Default Sink:/ {print $3}')
+MIC_SINK_NAME=$(pactl info | awk '/^Default Source:/ {print $3}')
+SPEAKER_MUTE=$(pactl get-sink-mute $SPEAKER_SINK_NAME | awk '{print $2}')
+MIC_MUTE=$(pactl get-source-mute $MIC_SINK_NAME | awk '{print $2}')
 
 active=""
 urgent=""
 
+# Speaker volume
+SPEAKER_VOL_LEFT=$(pactl get-sink-volume $SPEAKER_SINK_NAME | awk '{print $5}')
+SPEAKER_VOL_RIGHT=$(pactl get-sink-volume $SPEAKER_SINK_NAME | awk '{print $12}')
+
 # Speaker Info
-amixer get Master | grep '\[on\]' &>/dev/null
-if [[ "$?" == 0 ]]; then
-	active="-a 1"
-	stext='Unmute'
-	sicon=''
+if [[ "$SPEAKER_MUTE" == "yes" ]]; then
+    stext='Mute'
+    sicon=''
+    urgent="-u 1"
 else
-	urgent="-u 1"
-	stext='Mute'
-	sicon=''
+    stext='Unmute'
+    active="-a 1"
+    sicon=''
 fi
 
 # Microphone Info
-amixer get Capture | grep '\[on\]' &>/dev/null
-if [[ "$?" == 0 ]]; then
-    [ -n "$active" ] && active+=",3" || active="-a 3"
-	mtext='Unmute'
-	micon=''
+if [[ "$MIC_MUTE" == "yes" ]]; then
+  [ -n "$urgent" ] && urgent+=",3" || urgent="-u 3"
+    mtext='Mute'
+    micon=''
 else
-    [ -n "$urgent" ] && urgent+=",3" || urgent="-u 3"
-	mtext='Mute'
-	micon=''
+  [ -n "$active" ] && active+=",3" || active="-a 3"
+    mtext='Unmute'
+    micon=''
 fi
 
-# Theme Elements
-prompt="S:$stext, M:$mtext"
-mesg="$mixer - Speaker: $speaker, Mic: $mic"
 
+# Theme Elements
+prompt="Audio Control"
+mesg=""
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
 	list_row='5'
@@ -84,11 +88,10 @@ fi
 rofi_cmd() {
 	rofi -theme-str "window {width: $win_width;}" \
 		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
+    -theme-str "textbox-prompt-colon {str: \"$SPEAKER_VOL_LEFT/$SPEAKER_VOL_RIGHT\";}" \
 		-dmenu \
 		-p "$prompt" \
-		-mesg "$mesg" \
-		${active} ${urgent} \
+    ${active} ${urgent} \
 		-markup-rows \
 		-theme ${theme}
 }
@@ -101,13 +104,13 @@ run_rofi() {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		amixer -Mq set Master,0 5%+ unmute
+    pactl set-sink-volume $SPEAKER_SINK_NAME +10%
 	elif [[ "$1" == '--opt2' ]]; then
-		amixer set Master toggle
+    pactl set-sink-mute $SPEAKER_SINK_NAME toggle
 	elif [[ "$1" == '--opt3' ]]; then
-		amixer -Mq set Master,0 5%- unmute
+    pactl set-sink-volume $SPEAKER_SINK_NAME -10%
 	elif [[ "$1" == '--opt4' ]]; then
-		amixer set Capture toggle
+    pactl set-source-mute $MIC_SINK_NAME toggle
 	elif [[ "$1" == '--opt5' ]]; then
 		pavucontrol
 	fi

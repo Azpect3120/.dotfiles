@@ -25,8 +25,8 @@ bindsym $mod+q kill
 bindsym $mod+f exec vivaldi
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
-bindsym $mod+a exec --no-startup-id pavucontrol
-# bindsym $mod+a exec --no-startup-id /home/azpect/.dotfiles/config/rofi/volume.sh
+# bindsym $mod+a exec --no-startup-id pavucontrol
+bindsym $mod+a exec --no-startup-id /home/azpect/.dotfiles/config/rofi/volume.sh
 bindsym $mod+e exec --no-startup-id pcmanfm
 
 # Disable focus follows mouse
