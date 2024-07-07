@@ -25,7 +25,7 @@ bindsym $mod+q kill
 exec_always --no-startup-id $HOME/.dotfiles/config/i3/displays.sh
 
 # Start Applications
-bindsym $mod+f exec firefox
+bindsym $mod+f exec vivaldi
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
 bindsym $mod+a exec --no-startup-id pavucontrol

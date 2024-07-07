@@ -24,8 +24,8 @@ alias sb="source $HOME/.bashrc"
 # Replace LS with eza
 alias ls="eza --icons=always --group-directories-first -X"
 alias la="eza --icons=always --group-directories-first -aX"
-alias ll="eza --icons=always --group-directories-first -lX --git"
-alias lla="eza --icons=always --group-directories-first -laX --git"
+alias ll="eza --icons=always --group-directories-first -lgX --git"
+alias lla="eza --icons=always --group-directories-first -lagX --git"
 alias lt="eza --icons=always --group-directories-first -XTL 2"
 
 # Using fzf for history

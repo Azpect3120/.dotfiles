@@ -46,7 +46,7 @@ config.window_padding = {
 
 -- Configure fonts
 config.font = wezterm.font("JetBrains Mono", { italic = false, weight = "Regular" })
-config.font_size = 14.0
+config.font_size = 12.0
 
 -- Define the starting directory
 config.default_cwd = "$HOME"
