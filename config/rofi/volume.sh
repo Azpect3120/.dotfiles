@@ -7,9 +7,14 @@
 
 # Import Current Theme
 type="$HOME/.config/rofi/applets/type-3"
-style='style-2.rasi'
-theme="$type/$style"
+style='style-3.rasi'
+# Change width on line 29 -> 100px
+# Change font on line 125 -> feather 16
+# Change border radius on line 35 -> 12px
+# Change x-offset on line 30 -> -15px
 
+
+theme="$type/$style"
 
 # Speaker and mic information
 SPEAKER_SINK_NAME=$(pactl info | awk '/^Default Sink:/ {print $3}')
@@ -57,7 +62,7 @@ if [[ "$theme" == *'type-1'* ]]; then
 elif [[ "$theme" == *'type-3'* ]]; then
 	list_col='1'
 	list_row='5'
-	win_width='120px'
+	win_width='100px'
 elif [[ "$theme" == *'type-5'* ]]; then
 	list_col='1'
 	list_row='5'

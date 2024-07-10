@@ -11,7 +11,10 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-5' # Make sure to change 'west' to 'east' and change 'x-offset' to negative value for style-5
+theme='style-5' 
+# Make sure to change 'west' to 'east' and change 'x-offset' to negative value for style-5
+# Change font size on line 160 -> feather bold 16
+# Change width on line 25 -> 100px
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
