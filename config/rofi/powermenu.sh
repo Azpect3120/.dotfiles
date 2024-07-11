@@ -5,7 +5,7 @@
 #
 ## Rofi   : Power Menu
 #
-# Custom build by @Azpect3120
+# Custom modifications by @Azpect3120
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
