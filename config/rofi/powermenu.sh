@@ -5,16 +5,7 @@
 #
 ## Rofi   : Power Menu
 #
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-
-# Current Theme
-dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-5' 
-# Make sure to change 'west' to 'east' and change 'x-offset' to negative value for style-5
-# Change font size on line 160 -> feather bold 16
-# Change width on line 25 -> 100px
+# Custom build by @Azpect3120
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -34,8 +25,9 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "$host" \
 		-mesg "Uptime: $uptime" \
-		-theme ${dir}/${theme}.rasi
+    -theme "$HOME/.dotfiles/config/rofi/themes/powermenu.rasi"
 }
+# -theme ${dir}/${theme}.rasi
 
 # Confirmation CMD
 confirm_cmd() {
