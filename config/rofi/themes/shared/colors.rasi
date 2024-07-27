@@ -17,7 +17,8 @@
 
 /* @import "~/.config/rofi/colors/onedark.rasi" */
 
-/* Custom Theme */
+/* Stock Market Theme */
+/*
 * {
     background:     #0c1813;
     background-alt: #263038;
@@ -25,4 +26,15 @@
     selected:       #5ac8a4;
     active:         #32818d;
     urgent:         #66dfe8;
+}
+*/
+
+/* Deadpool Theme */
+* {
+    background:     #1d2830;
+    background-alt: #2f3846;
+    foreground:     #EEEEEE;
+    selected:       #cb0f0e;
+    active:         #670909;
+    urgent:         #cb0f0e;
 }
