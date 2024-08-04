@@ -30,6 +30,7 @@
 */
 
 /* Deadpool Theme */
+/*
 * {
     background:     #1d2830;
     background-alt: #2f3846;
@@ -37,4 +38,15 @@
     selected:       #cb0f0e;
     active:         #670909;
     urgent:         #cb0f0e;
+}
+*/
+
+/* S1000RR Forest Theme */
+* {
+    background:     #1d2830;
+    background-alt: #2f3846;
+    foreground:     #EEEEEE;
+    selected:       #e0c45a;
+    active:         #cd9301;
+    urgent:         #8a1c01;
 }

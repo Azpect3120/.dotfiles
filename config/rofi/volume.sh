@@ -4,12 +4,11 @@
 ## Github  : @adi1090x
 #
 ## Applets : Volume
+#
+# Custom modifications by @Azpect3120
 
 # Import Current Theme
-type="$HOME/.config/rofi/applets/type-3"
-style='style-2.rasi'
-theme="$type/$style"
-
+theme="$HOME/.dotfiles/config/rofi/themes/volume.rasi"
 
 # Speaker and mic information
 SPEAKER_SINK_NAME=$(pactl info | awk '/^Default Sink:/ {print $3}')
@@ -17,12 +16,12 @@ MIC_SINK_NAME=$(pactl info | awk '/^Default Source:/ {print $3}')
 SPEAKER_MUTE=$(pactl get-sink-mute $SPEAKER_SINK_NAME | awk '{print $2}')
 MIC_MUTE=$(pactl get-source-mute $MIC_SINK_NAME | awk '{print $2}')
 
-active=""
-urgent=""
-
 # Speaker volume
 SPEAKER_VOL_LEFT=$(pactl get-sink-volume $SPEAKER_SINK_NAME | awk '{print $5}')
 SPEAKER_VOL_RIGHT=$(pactl get-sink-volume $SPEAKER_SINK_NAME | awk '{print $12}')
+
+active=""
+urgent=""
 
 # Speaker Info
 if [[ "$SPEAKER_MUTE" == "yes" ]]; then
@@ -50,39 +49,18 @@ fi
 # Theme Elements
 prompt="Audio Control"
 mesg=""
-if [[ "$theme" == *'type-1'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='400px'
-elif [[ "$theme" == *'type-3'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='120px'
-elif [[ "$theme" == *'type-5'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='520px'
-elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
-	list_col='5'
-	list_row='1'
-	win_width='670px'
-fi
+
+# Listview
+list_col='1'
+list_row='5'
+win_width='100px'
 
 # Options
-layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
-if [[ "$layout" == 'NO' ]]; then
-	option_1=" Increase"
-	option_2="$sicon $stext"
-	option_3=" Decrese"
-	option_4="$micon $mtext"
-	option_5=" Settings"
-else
-	option_1=""
-	option_2="$sicon"
-	option_3=""
-	option_4="$micon"
-	option_5=""
-fi
+option_1=""
+option_2="$sicon"
+option_3=""
+option_4="$micon"
+option_5=""
 
 # Rofi CMD
 rofi_cmd() {
@@ -135,5 +113,3 @@ case ${chosen} in
 		run_cmd --opt5
         ;;
 esac
-
-
