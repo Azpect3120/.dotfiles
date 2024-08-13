@@ -30,6 +30,7 @@
 */
 
 /* Deadpool Theme */
+/*
 * {
     background:     #1d2830;
     background-alt: #2f3846;
@@ -37,4 +38,15 @@
     selected:       #cb0f0e;
     active:         #670909;
     urgent:         #cb0f0e;
+}
+*/
+
+/* Porsche Theme */
+* {
+    background:     #0c1319;
+    background-alt: #343840;
+    foreground:     #EEEEEE;
+    selected:       #f87500;
+    active:         #802800;
+    urgent:         #f87500;
 }
