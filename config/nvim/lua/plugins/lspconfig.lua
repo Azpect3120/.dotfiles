@@ -64,6 +64,7 @@ return {
       "asm_lsp",
       "qmlls",
       "dockerls",
+      "jsonls"
     }
 
     -- Provide LSP List Capabilities and Attach Functionality
