@@ -9,6 +9,6 @@ return {
     -- refer to the configuration section below
   },
   keys = {
-    { "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "Toggle the error log" }
+    { "<leader>tt", "<cmd>Trouble diagnostics<cr>", desc = "Toggle the error log" }
   }
 }

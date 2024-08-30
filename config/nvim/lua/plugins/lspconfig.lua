@@ -136,6 +136,20 @@ return {
           },
           single_file_support = true
         })
+      elseif lsp == "pylsp" then
+        lspconfig.pylsp.setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          settings = {
+            pylsp = {
+              plugins = {
+                pylint = {
+                  enabled = true,
+                },
+              },
+            }
+          }
+        })
       else
         lspconfig[lsp].setup(config)
       end
@@ -191,11 +205,11 @@ return {
       sources = cmp.config.sources({
         { name = "path" },
       }, {
-        {
-          name = "cmdline",
-          option = { ignore_cmds = { "!" } },
-        },
-      }),
+          {
+            name = "cmdline",
+            option = { ignore_cmds = { "!" } },
+          },
+        }),
     })
 
     -- Enable virtual text for diagnostics
