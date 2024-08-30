@@ -9,6 +9,7 @@ return {
     -- refer to the configuration section below
   },
   keys = {
-    { "<leader>tt", "<cmd>Trouble diagnostics<cr>", desc = "Toggle the error log" }
+    { "<leader>tt", "<cmd>Trouble diagnostics toggle win.position=right<cr>", desc = "Toggle the error log" },
+    { "<leader>ts", "<cmd>Trouble symbols toggle<cr>", desc = "Toggle the symbols from trouble" }
   }
 }
