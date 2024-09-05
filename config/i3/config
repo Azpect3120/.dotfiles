@@ -25,8 +25,9 @@ bindsym $mod+q kill
 bindsym $mod+f exec vivaldi
 bindsym $mod+Return exec wezterm
 bindsym $mod+s exec flameshot gui
-bindsym $mod+e exec --no-startup-id pcmanfm
-bindsym $mod+c exec morgen
+bindsym $mod+e exec --no-startup-id thunar
+bindsym $mod+t exec tradingview
+bindsym $mod+w exec LD_LIBRARY_PATH=/opt/WebullDesktop WebullDesktop
 
 
 # Disable focus follows mouse
