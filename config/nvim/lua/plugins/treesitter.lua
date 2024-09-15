@@ -23,7 +23,6 @@ return {
         "zig",
         "json",
         "yaml",
-        "ejs",
       },
       sync_install = false,
       highlight = { enable = true },
